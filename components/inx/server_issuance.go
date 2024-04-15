@@ -14,7 +14,7 @@ import (
 func (s *Server) RequestTips(_ context.Context, req *inx.TipsRequest) (*inx.TipsResponse, error) {
 	references, err := deps.Protocol.Engines.Main.Get().TipSelection.SelectTips(int(req.GetCount()))
 	if err != nil {
-		return nil, ierrors.Wrap(err, "failed to select tipss")
+		return nil, ierrors.Wrap(err, "failed to select tips")
 	}
 
 	return &inx.TipsResponse{
